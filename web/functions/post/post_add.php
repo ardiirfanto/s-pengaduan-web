@@ -10,8 +10,8 @@ $tmp = $_FILES['foto']['tmp_name'];
 $location = "../../assets/doc/thumbnail/";
 
 $cat_id = $_POST['cat_id'];
-$title = $_POST['title'];
-$content = $_POST['content'];
+$title = addslashes($_POST['title']);
+$content = addslashes($_POST['content']);
 try {
 
     $foto = $_FILES['foto']['name'];

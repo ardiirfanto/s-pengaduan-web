@@ -24,13 +24,13 @@ $post = new Post();
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <table id="datatable" class="table table-bordered dt-responsive nowrap">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Thumbnail</th>
+                                    <th width="10px" >No</th>
+                                    <th width="100px">Thumbnail</th>
                                     <th>Post</th>
-                                    <th></th>
+                                    <th width="100px"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,7 +43,7 @@ $post = new Post();
                                         <td>
                                             <img width="100px" src="assets/doc/thumbnail/<?= $v['post_thumbnail'] ?>" alt="">
                                         </td>
-                                        <td><?= $v['post_title'] ?></td>
+                                        <td><p style="word-wrap: break-word;white-space: pre-wrap;"><?= $v['post_title'] ?></p></td>
                                         <td>
                                             <a href="home?p=post_edit&id=<?= $v['post_id'] ?>" type="button" class="btn btn-info">Edit</a>
                                             <button onclick="del(<?= $v['post_id'] ?>)" type="button" class="btn btn-danger">

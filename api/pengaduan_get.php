@@ -14,7 +14,8 @@ try {
         FROM pengaduan a JOIN category_pengaduan b
         ON a.category_pengaduan_id = b.category_pengaduan_id
         JOIN warga c ON a.warga_id = c.warga_id
-        WHERE a.warga_id = '$warga_id"
+        WHERE a.warga_id = '$warga_id'
+        ORDER BY a.pengaduan_id DESC"
     )->fetch_all(MYSQLI_ASSOC);
 
     if ($get) {

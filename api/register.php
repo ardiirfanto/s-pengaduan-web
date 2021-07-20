@@ -13,6 +13,7 @@ $name = $_POST['name'];
 $gender = $_POST['gender'];
 $alamat = $_POST['alamat'];
 $phone = $_POST['phone'];
+$role = "warga";
 
 try {
 

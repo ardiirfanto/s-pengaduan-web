@@ -9,7 +9,7 @@ class JSONResponse
         $data = [
             "status" => [
                 "code" => 200,
-                "Success"
+                "msg" => "Success"
             ],
             "res" => $res,
         ];
@@ -23,7 +23,7 @@ class JSONResponse
         $data = [
             "status" => [
                 "code" => 500,
-                "Failed"
+                "msg" => "Failed"
             ],
             "res" => $res,
         ];

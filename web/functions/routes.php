@@ -16,6 +16,9 @@ function menu($page = "main")
 		case "pengaduan":
 			$pg = "pengaduan.php";
 			break;
+		case "pengaduan_detail":
+			$pg = "pengaduan_detail.php";
+			break;
 		case "pengaduan_kategori":
 			$pg = "pengaduan_kategori.php";
 			break;

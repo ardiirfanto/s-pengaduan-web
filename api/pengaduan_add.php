@@ -12,8 +12,8 @@ $location = "../web/assets/doc/pengaduan/";
 
 $warga_id = $_POST['warga_id'];
 $cat_id = $_POST['cat_id'];
-$title = $_POST['title'];
-$desc = $_POST['desc'];
+$title = addslashes($_POST['title']);
+$desc = addslashes($_POST['desc']);
 $lat = $_POST['lat'];
 $lng = $_POST['lng'];
 
@@ -47,7 +47,7 @@ try {
                 'Pending',
                 '$nama_file',
                 '$lat',
-                '$lng',
+                '$lng'
             )"
         );
 
@@ -57,7 +57,7 @@ try {
                 FROM pengaduan a JOIN category_pengaduan b
                 ON a.category_pengaduan_id = b.category_pengaduan_id
                 JOIN warga c ON a.warga_id = c.warga_id
-                WHERE a.pengaduan_img = '$nama_file"
+                WHERE a.pengaduan_img = '$nama_file'"
             )->fetch_assoc();
         }
     }

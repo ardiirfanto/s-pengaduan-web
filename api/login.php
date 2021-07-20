@@ -18,7 +18,7 @@ try {
 
         if (password_verify($password, $get['password'])) {
             $get_data = $sql->query(
-                "SELECT a.*, b.warga_name, b.warga_gender, b.warga_alamat, b.warga_phone 
+                "SELECT a.*, b.warga_id, b.warga_name, b.warga_gender, b.warga_alamat, b.warga_phone 
                 FROM users a JOIN warga b ON a.user_id = b.user_id 
                 WHERE a.user_id = '$get[user_id]'"
             )->fetch_assoc();

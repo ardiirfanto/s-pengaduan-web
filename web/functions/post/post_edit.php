@@ -11,8 +11,8 @@ $location = "../../assets/doc/thumbnail/";
 
 $post_id = $_POST['post_id'];
 $cat_id = $_POST['cat_id'];
-$title = $_POST['title'];
-$content = $_POST['content'];
+$title = addslashes($_POST['title']);
+$content = addslashes($_POST['content']);
 try {
 
     if (!$tmp) {
