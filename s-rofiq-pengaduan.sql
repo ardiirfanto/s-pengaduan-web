@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 04 Jul 2021 pada 15.04
+-- Waktu pembuatan: 20 Jul 2021 pada 14.44
 -- Versi server: 5.7.24
 -- Versi PHP: 7.4.10
 
@@ -117,12 +117,21 @@ CREATE TABLE `pengaduan` (
   `warga_id` bigint(20) UNSIGNED NOT NULL,
   `pengaduan_title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `pengaduan_desc` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pengaduan_date` date NOT NULL,
+  `pengaduan_date` datetime NOT NULL,
   `pengaduan_status` enum('Pending','Proses','Selesai') COLLATE utf8mb4_unicode_ci NOT NULL,
   `pengaduan_img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `pengaduan`
+--
+
+INSERT INTO `pengaduan` (`pengaduan_id`, `category_pengaduan_id`, `warga_id`, `pengaduan_title`, `pengaduan_desc`, `pengaduan_date`, `pengaduan_status`, `pengaduan_img`, `lat`, `lng`) VALUES
+(4, 1, 2, 'Section 1.10.33 of \"de Finibus Bonorum et Malorum\", written by Cicero in 45 BC', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', '2021-07-19 15:03:41', 'Pending', 'PENG_20210719080341.jpg', '-6,888990', '110,99999'),
+(7, 1, 2, 'Kecelakaan Panas', 'Kecelakaan terjadi di jalan A sampai B', '2021-07-19 22:49:36', 'Pending', 'PENG_20210719154936.jpg', '-6,888990', '110,99999'),
+(8, 1, 2, 'Laporan Baru', 'Ini adalah Laporan Baru', '2021-07-20 16:50:54', 'Proses', 'PENG_20210720095054.jpg', '37.421998333333335', '-122.08400000000002');
 
 -- --------------------------------------------------------
 
@@ -144,9 +153,9 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`post_id`, `category_post_id`, `post_title`, `post_thumbnail`, `post_content`, `post_date`) VALUES
-(1, 2, 'Ini Berita Pentingss', 'THUMB_20210704145918.jpg', '<p><font face=\"Comic Sans MS\"><b>Ini adalah sebuah berita penting ssssssszzz</b></font></p>', '2021-07-04'),
-(2, 2, 'Ini Berita', 'THUMB_20210704143533jpg', '<p><b>Ini Bukan berita penting bosss</b></p>', '2021-07-04'),
-(3, 2, 'Ini Berita', 'THUMB_20210704143958.jpg', '<p><b>Ini Bukan berita penting bosss</b></p>', '2021-07-04');
+(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'THUMB_20210704145918.jpg', '<div style=\"text-align: justify; \"><font face=\"Arial\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Molestie a iaculis at erat pellentesque. Etiam tempor orci eu lobortis elementum nibh tellus molestie. Iaculis at erat pellentesque adipiscing commodo. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Dictum varius duis at consectetur lorem donec massa sapien. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Sit amet massa vitae tortor. Ut etiam sit amet nisl purus in mollis. Gravida quis blandit turpis cursus in hac habitasse. Felis donec et odio pellentesque diam volutpat. Nibh tellus molestie nunc non.</font></div><div style=\"text-align: justify;\"><font face=\"Arial\"><br></font></div><div style=\"text-align: justify;\"><font face=\"Arial\">Aenean et tortor at risus viverra adipiscing at. Aliquet enim tortor at auctor. Diam in arcu cursus euismod. Id donec ultrices tincidunt arcu non sodales. Et malesuada fames ac turpis egestas integer. Praesent semper feugiat nibh sed pulvinar proin. Scelerisque viverra mauris in aliquam sem fringilla ut. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Felis imperdiet proin fermentum leo vel orci porta. Eget velit aliquet sagittis id consectetur purus ut. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. Adipiscing elit pellentesque habitant morbi tristique senectus. Non tellus orci ac auctor augue. Metus aliquam eleifend mi in. Sapien faucibus et molestie ac feugiat sed lectus. Lectus quam id leo in vitae turpis. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat.</font></div><div style=\"text-align: justify;\"><font face=\"Arial\"><br></font></div><div style=\"text-align: justify;\"><font face=\"Arial\">Vestibulum rhoncus est pellentesque elit. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Felis bibendum ut tristique et egestas. Pretium fusce id velit ut tortor pretium viverra suspendisse. Mattis pellentesque id nibh tortor. Consequat id porta nibh venenatis. Eget nullam non nisi est sit amet facilisis magna. Vitae justo eget magna fermentum iaculis eu non. Et tortor at risus viverra adipiscing at. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Eu consequat ac felis donec. Nisi scelerisque eu ultrices vitae. Posuere morbi leo urna molestie at elementum eu facilisis sed. Etiam sit amet nisl purus in mollis nunc. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.</font></div><div style=\"text-align: justify;\"><font face=\"Arial\"><br></font></div><div style=\"text-align: justify;\"><font face=\"Arial\">Eu sem integer vitae justo eget magna. A erat nam at lectus urna duis. Faucibus nisl tincidunt eget nullam. Ac ut consequat semper viverra nam libero justo laoreet sit. Pretium lectus quam id leo in vitae. Tortor at auctor urna nunc id cursus. Scelerisque viverra mauris in aliquam. Diam ut venenatis tellus in metus vulputate eu. Id ornare arcu odio ut sem nulla. Nunc mi ipsum faucibus vitae aliquet nec. Sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus. Nibh praesent tristique magna sit amet purus gravida quis. Ante in nibh mauris cursus mattis molestie. Arcu bibendum at varius vel pharetra. Blandit aliquam etiam erat velit. Commodo odio aenean sed adipiscing diam donec. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus.</font></div><div style=\"text-align: justify;\"><font face=\"Arial\"><br></font></div><div style=\"text-align: justify;\"><font face=\"Arial\">Vel fringilla est ullamcorper eget. Tincidunt ornare massa eget egestas purus viverra. Et ultrices neque ornare aenean euismod elementum nisi quis. In pellentesque massa placerat duis ultricies lacus. Tristique senectus et netus et malesuada fames ac turpis. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Amet dictum sit amet justo donec enim diam vulputate. Aliquam ultrices sagittis orci a scelerisque purus semper eget. In nibh mauris cursus mattis molestie a iaculis at erat. Sit amet commodo nulla facilisi nullam vehicula ipsum. Interdum posuere lorem ipsum dolor sit amet consectetur. Mauris commodo quis imperdiet massa tincidunt nunc. Ornare massa eget egestas purus. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Gravida rutrum quisque non tellus orci ac auctor. Risus viverra adipiscing at in. Dui faucibus in ornare quam viverra orci sagittis eu. Diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus.</font></div>', '2021-07-20'),
+(2, 2, 'He had decided to accept his fate of accepting his fate', 'THUMB_20210704143533.jpg', '<div style=\"text-align: justify; \">The leather jacked showed the scars of being his favorite for years. It wore those scars with pride, feeling that they enhanced his presence rather than diminishing it. The scars gave it character and had not overwhelmed to the point that it had become ratty. The jacket was in its prime and it knew it.</div><div style=\"text-align: justify; \">Dave watched as the forest burned up on the hill, only a few miles from her house. The car had been hastily packed and Marta was inside trying to round up the last of the pets. Dave went through his mental list of the most important papers and documents that they couldn\'t leave behind. He scolded himself for not having prepared these better in advance and hoped that he had remembered everything that was needed. He continued to wait for Marta to appear with the pets, but she still was nowhere to be seen.</div><div style=\"text-align: justify; \">Dave wasn\'t exactly sure how he had ended up in this predicament. He ran through all the events that had lead to this current situation and it still didn\'t make sense. He wanted to spend some time to try and make sense of it all, but he had higher priorities at the moment. The first was how to get out of his current situation of being naked in a tree with snow falling all around and no way for him to get down.</div>', '2021-07-20'),
+(3, 2, 'When I cook spaghetti, I like to boil it a few minutes past al dente so the noodles are super slippery.', 'THUMB_20210704143958.jpg', '<div style=\"text-align: justify; \">Cake or pie? I can tell a lot about you by which one you pick. It may seem silly, but cake people and pie people are really different. I know which one I hope you are, but that\'s not for me to decide. So, what is it? Cake or pie?</div><div style=\"text-align: justify;\">The rain and wind abruptly stopped, but the sky still had the gray swirls of storms in the distance. Dave knew this feeling all too well. The calm before the storm. He only had a limited amount of time before all Hell broke loose, but he stopped to admire the calmness. Maybe it would be different this time, he thought, with the knowledge deep within that it wouldn\'t.</div><div style=\"text-align: justify; \">Hopes and dreams were dashed that day. It should have been expected, but it still came as a shock. The warning signs had been ignored in favor of the possibility, however remote, that it could actually happen. That possibility had grown from hope to an undeniable belief it must be destiny. That was until it wasn\'t and the hopes and dreams came crashing down.</div>', '2021-07-20');
 
 -- --------------------------------------------------------
 
@@ -167,10 +176,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `role`) VALUES
 (1, 'admin', '$2y$10$YSDWluqcKc5EfLZNucs3tOUEr0yEoGemxT1FV7y4oau/dQ20EhUUm', 'admin'),
-(5, 'budis', '$2y$10$DUf7Yo4kjijjyhO.VXxv4OM1znZ29Dnhfz.PE/ekBsHASYAmf2RlG', 'warga'),
+(5, 'budi', '$2y$10$x7uzH8iipfGhHUeIs3tF8OKyPbtZm4Z84WfIBXJ57UvoMePjUY67O', 'warga'),
 (6, 'hamis', '$2y$10$7TzCqijQQhbVGCHeRJ.wCOTU9Zu3Qmfl7b60N.8kY6yP1JNhq2zMi', 'warga'),
 (8, 'khamil', '$2y$10$FxtGlw8uGRiEelinf5/c..fdm9JpWEew0E/RPKpddYYANUFFkwhT6', 'warga'),
-(10, 'zainuri', '$2y$10$U08CGR1Q2EHm3RK7alLNfujxIvnp1CrWbUVrDdxGQLG92GKPlYRhi', 'kades');
+(10, 'zainuri', '$2y$10$U08CGR1Q2EHm3RK7alLNfujxIvnp1CrWbUVrDdxGQLG92GKPlYRhi', 'kades'),
+(11, 'huda', '$2y$10$T4lEOCYrmFVYCVqJTNJ1yeBHaO5R9iMOH/XGge/fe9FkVRK47d7RC', 'warga'),
+(13, 'hubi', '$2y$10$2VkgC9vnq04gMo91Y2M4kepHke26czyFGO2ke6ngTyfOAKHqH9G6i', 'warga'),
+(14, 'mida', '$2y$10$59yMHIhfqqXbEr5ehgCMb.ccSwAgP6XJFdHHdQuT86zWT7GNGRgiS', 'warga'),
+(15, 'miho', '$2y$10$FbWaPryzgEPwRSDSsMsaueh3u9IbtPh9Q/QUU0xcZlNmty9p4rx2G', 'warga');
 
 -- --------------------------------------------------------
 
@@ -194,7 +207,10 @@ CREATE TABLE `warga` (
 INSERT INTO `warga` (`warga_id`, `user_id`, `warga_name`, `warga_gender`, `warga_alamat`, `warga_phone`) VALUES
 (2, 5, 'Budi Nuryanto', 'L', 'Pati', '089999000999'),
 (3, 6, 'Hami Hinaya', 'P', 'Pati', '087666555678'),
-(4, 8, 'Khamil Ahmad', 'L', 'Pati', '089999888999');
+(4, 8, 'Khamil Ahmad', 'L', 'Pati', '089999888999'),
+(5, 13, 'Hubi A', 'L', 'Kudus', '081234567890'),
+(6, 14, 'Mida M', 'L', 'Kudus', '081234567890'),
+(7, 15, 'Miho Akemichi', 'P', 'Kudus', '08977667773');
 
 --
 -- Indexes for dumped tables
@@ -286,25 +302,25 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `pengaduan_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `pengaduan_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
-  MODIFY `post_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `post_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `warga_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `warga_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

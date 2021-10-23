@@ -24,7 +24,7 @@ try {
     if (move_uploaded_file($tmp, $location . $nama_file)) {
 
         $q = $sql->query(
-            "INSERT INTO post(category_post_id,post_title,post_thumbnail,post_content,post_date)
+            "INSERT INTO berita(category_post_id,post_title,post_thumbnail,post_content,post_date)
             VALUES('$cat_id','$title','$nama_file','$content',NOW())"
         );
 

@@ -16,7 +16,7 @@ class Post {
 
 
         try {
-            $get = $this->sql->query("SELECT * FROM post")->fetch_all(MYSQLI_ASSOC);
+            $get = $this->sql->query("SELECT * FROM berita")->fetch_all(MYSQLI_ASSOC);
 
             return $get;
         } catch (Exception $e) {
@@ -27,7 +27,7 @@ class Post {
     function get_post($id)
     {
         try {
-            $get = $this->sql->query("SELECT * FROM post WHERE post_id ='$id'")->fetch_assoc();
+            $get = $this->sql->query("SELECT * FROM berita WHERE post_id ='$id'")->fetch_assoc();
 
             return $get;
         } catch (Exception $e) {

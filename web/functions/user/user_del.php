@@ -5,7 +5,7 @@ $sql = new Sql();
 try {
 
     $q_del = $sql->query(
-        "DELETE FROM users WHERE user_id='$_POST[user_id]'"
+        "DELETE FROM pengguna WHERE user_id='$_POST[user_id]'"
     );
 
     if ($q_del) {

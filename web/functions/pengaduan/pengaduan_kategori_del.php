@@ -5,7 +5,7 @@ $sql = new Sql();
 try {
 
     $q_del = $sql->query(
-        "DELETE FROM category_pengaduan WHERE category_pengaduan_id='$_POST[cat_id]'"
+        "DELETE FROM kategori_pengaduan WHERE category_pengaduan_id='$_POST[cat_id]'"
     );
 
     if ($q_del) {

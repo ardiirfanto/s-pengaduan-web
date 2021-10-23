@@ -7,7 +7,7 @@ $cat = $_POST['cat'];
 try {
 
     $q = $sql->query(
-        "INSERT INTO category_pengaduan(category_pengaduan) VALUES('$cat')"
+        "INSERT INTO kategori_pengaduan(category_pengaduan) VALUES('$cat')"
     );
 
     if ($q) {

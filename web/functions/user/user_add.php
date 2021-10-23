@@ -13,12 +13,12 @@ $phone = $_POST['phone'] ?? '';
 try {
 
     $q_user = $sql->query(
-        "INSERT INTO users(username,password,role) VALUES('$username','$password','$role')"
+        "INSERT INTO pengguna(username,password,role) VALUES('$username','$password','$role')"
     );
 
     if ($q_user) {
 
-        $get_user = $sql->query("SELECT * FROM users WHERE role='$role' ORDER BY user_id DESC LIMIT 1")->fetch_assoc();
+        $get_user = $sql->query("SELECT * FROM pengguna WHERE role='$role' ORDER BY user_id DESC LIMIT 1")->fetch_assoc();
 
         $user_id = $get_user['user_id'];
         $user_role = $get_user['role'];

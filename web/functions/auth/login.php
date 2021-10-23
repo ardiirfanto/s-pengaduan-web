@@ -8,7 +8,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 try {
-    $get = $sql->query("SELECT * FROM users WHERE username = '$username'")->fetch_assoc();
+    $get = $sql->query("SELECT * FROM pengguna WHERE username = '$username'")->fetch_assoc();
 
     if ($get) {
 

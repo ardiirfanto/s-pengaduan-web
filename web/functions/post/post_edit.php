@@ -17,7 +17,7 @@ try {
 
     if (!$tmp) {
         $q = $sql->query(
-            "UPDATE post SET 
+            "UPDATE berita SET 
             category_post_id='$cat_id', 
             post_title='$title',
             post_content='$content',
@@ -26,7 +26,7 @@ try {
         );
     } else {
 
-        $getData = $sql->query("SELECT * FROM post WHERE post_id ='$post_id'")->fetch_assoc();
+        $getData = $sql->query("SELECT * FROM berita WHERE post_id ='$post_id'")->fetch_assoc();
 
         $file_available = glob($location . $getData['post_thumbnail']);
         foreach ($file_available as $file) {

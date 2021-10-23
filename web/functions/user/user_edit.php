@@ -15,11 +15,11 @@ try {
 
     if ($_POST['password'] != '') {
         $q_user = $sql->query(
-            "UPDATE users SET username ='$username', password='$password' WHERE user_id='$user_id'"
+            "UPDATE pengguna SET username ='$username', password='$password' WHERE user_id='$user_id'"
         );
     } else {
         $q_user = $sql->query(
-            "UPDATE users SET username ='$username' WHERE user_id='$user_id'"
+            "UPDATE pengguna SET username ='$username' WHERE user_id='$user_id'"
         );
     }
 

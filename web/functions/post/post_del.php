@@ -6,7 +6,7 @@ $sql = new Sql();
 $location = "../../assets/doc/thumbnail/";
 try {
 
-    $getData = $sql->query("SELECT * FROM post WHERE post_id ='$_POST[post_id]'")->fetch_assoc();
+    $getData = $sql->query("SELECT * FROM berita WHERE post_id ='$_POST[post_id]'")->fetch_assoc();
 
     $file_available = glob($location . $getData['post_thumbnail']);
     foreach ($file_available as $file) {

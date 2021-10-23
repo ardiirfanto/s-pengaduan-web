@@ -8,7 +8,7 @@ $cat = $_POST['cat'];
 try {
 
     $q = $sql->query(
-        "UPDATE category_post SET category_post='$cat' WHERE category_post_id='$cat_id'"
+        "UPDATE kategori_berita SET category_post='$cat' WHERE category_post_id='$cat_id'"
     );
 
     if ($q) {
